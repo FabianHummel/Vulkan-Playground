@@ -19,7 +19,7 @@ layout(location = 2) out vec2 fragTexCoord;
 void main() {
     gl_Position = ubo.proj * ubo.view * ubo.model * vec4(inPosition, 1.0);
 
-    fragColor = inColor;
+    fragColor = inColor * max(dot(inNormal, ubo.lightPos.xyz), 0.3);
     mat3 normalMatrix = transpose(inverse(mat3(ubo.view * ubo.model)));
     fragNormal = normalize(normalMatrix * inNormal);
     fragTexCoord = inTexCoord;
