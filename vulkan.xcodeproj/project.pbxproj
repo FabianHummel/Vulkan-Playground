@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FAD00192B82A1000061BD24 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD00182B82A1000061BD24 /* main.c */; };
+		1FAD002F2B82A20A0061BD24 /* model.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD00252B82A20A0061BD24 /* model.c */; };
+		1FAD00312B82A23F0061BD24 /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD00302B82A23F0061BD24 /* init.c */; };
+		1FAD00362B82A36E0061BD24 /* libMoltenVK.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAD00332B82A36E0061BD24 /* libMoltenVK.dylib */; };
+		1FAD00372B82A36E0061BD24 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAD00342B82A36E0061BD24 /* libSDL2-2.0.0.dylib */; };
+		1FAD00382B82A36E0061BD24 /* libvulkan.1.3.268.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAD00352B82A36E0061BD24 /* libvulkan.1.3.268.dylib */; };
+		1FAD00392B82A3DC0061BD24 /* cglm in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00262B82A20A0061BD24 /* cglm */; };
+		1FAD003A2B82A3DC0061BD24 /* models in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00212B82A20A0061BD24 /* models */; };
+		1FAD003B2B82A3DC0061BD24 /* textures in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD002B2B82A20A0061BD24 /* textures */; };
+		1FAD003C2B82A3DC0061BD24 /* init.c in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00302B82A23F0061BD24 /* init.c */; };
+		1FAD003D2B82A3DC0061BD24 /* main.c in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00182B82A1000061BD24 /* main.c */; };
+		1FAD003E2B82A3DC0061BD24 /* model.c in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00252B82A20A0061BD24 /* model.c */; };
+		1FAD003F2B82A3DC0061BD24 /* quad.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00282B82A20A0061BD24 /* quad.frag */; };
+		1FAD00402B82A3DC0061BD24 /* shader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00242B82A20A0061BD24 /* shader.frag */; };
+		1FAD00412B82A3DC0061BD24 /* cgltf.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD001F2B82A2090061BD24 /* cgltf.h */; };
+		1FAD00422B82A3DC0061BD24 /* model.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00292B82A20A0061BD24 /* model.h */; };
+		1FAD00432B82A3DC0061BD24 /* stb_image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD002D2B82A20A0061BD24 /* stb_image.h */; };
+		1FAD00442B82A3DC0061BD24 /* types.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00222B82A20A0061BD24 /* types.h */; };
+		1FAD00452B82A3DC0061BD24 /* vkc.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00202B82A20A0061BD24 /* vkc.h */; };
+		1FAD00462B82A3DC0061BD24 /* compileShaders.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD002C2B82A20A0061BD24 /* compileShaders.sh */; };
+		1FAD00472B82A3DC0061BD24 /* quad.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD002A2B82A20A0061BD24 /* quad.vert */; };
+		1FAD00482B82A3DC0061BD24 /* shader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00272B82A20A0061BD24 /* shader.vert */; };
+		1FAD00492B82A3DC0061BD24 /* vulkan in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00152B82A1000061BD24 /* vulkan */; };
+		1FAD004A2B82A3DC0061BD24 /* libMoltenVK.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00332B82A36E0061BD24 /* libMoltenVK.dylib */; };
+		1FAD004B2B82A3DC0061BD24 /* libSDL2-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00342B82A36E0061BD24 /* libSDL2-2.0.0.dylib */; };
+		1FAD004C2B82A3DC0061BD24 /* libvulkan.1.3.268.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00352B82A36E0061BD24 /* libvulkan.1.3.268.dylib */; };
+		1FAD00592B82A46F0061BD24 /* quad.frag.spv in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00582B82A46B0061BD24 /* quad.frag.spv */; };
+		1FAD005A2B82A46F0061BD24 /* quad.vert.spv in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00572B82A46B0061BD24 /* quad.vert.spv */; };
+		1FAD005B2B82A46F0061BD24 /* shader.frag.spv in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00562B82A46B0061BD24 /* shader.frag.spv */; };
+		1FAD005C2B82A46F0061BD24 /* shader.vert.spv in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FAD00552B82A46B0061BD24 /* shader.vert.spv */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FAD00132B82A1000061BD24 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				1FAD00592B82A46F0061BD24 /* quad.frag.spv in CopyFiles */,
+				1FAD005A2B82A46F0061BD24 /* quad.vert.spv in CopyFiles */,
+				1FAD005B2B82A46F0061BD24 /* shader.frag.spv in CopyFiles */,
+				1FAD005C2B82A46F0061BD24 /* shader.vert.spv in CopyFiles */,
+				1FAD00392B82A3DC0061BD24 /* cglm in CopyFiles */,
+				1FAD003A2B82A3DC0061BD24 /* models in CopyFiles */,
+				1FAD003B2B82A3DC0061BD24 /* textures in CopyFiles */,
+				1FAD003C2B82A3DC0061BD24 /* init.c in CopyFiles */,
+				1FAD003D2B82A3DC0061BD24 /* main.c in CopyFiles */,
+				1FAD003E2B82A3DC0061BD24 /* model.c in CopyFiles */,
+				1FAD003F2B82A3DC0061BD24 /* quad.frag in CopyFiles */,
+				1FAD00402B82A3DC0061BD24 /* shader.frag in CopyFiles */,
+				1FAD00412B82A3DC0061BD24 /* cgltf.h in CopyFiles */,
+				1FAD00422B82A3DC0061BD24 /* model.h in CopyFiles */,
+				1FAD00432B82A3DC0061BD24 /* stb_image.h in CopyFiles */,
+				1FAD00442B82A3DC0061BD24 /* types.h in CopyFiles */,
+				1FAD00452B82A3DC0061BD24 /* vkc.h in CopyFiles */,
+				1FAD00462B82A3DC0061BD24 /* compileShaders.sh in CopyFiles */,
+				1FAD00472B82A3DC0061BD24 /* quad.vert in CopyFiles */,
+				1FAD00482B82A3DC0061BD24 /* shader.vert in CopyFiles */,
+				1FAD00492B82A3DC0061BD24 /* vulkan in CopyFiles */,
+				1FAD004A2B82A3DC0061BD24 /* libMoltenVK.dylib in CopyFiles */,
+				1FAD004B2B82A3DC0061BD24 /* libSDL2-2.0.0.dylib in CopyFiles */,
+				1FAD004C2B82A3DC0061BD24 /* libvulkan.1.3.268.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1FAD00152B82A1000061BD24 /* vulkan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vulkan; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FAD00182B82A1000061BD24 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1FAD001F2B82A2090061BD24 /* cgltf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cgltf.h; sourceTree = "<group>"; };
+		1FAD00202B82A20A0061BD24 /* vkc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vkc.h; sourceTree = "<group>"; };
+		1FAD00212B82A20A0061BD24 /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
+		1FAD00222B82A20A0061BD24 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		1FAD00242B82A20A0061BD24 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		1FAD00252B82A20A0061BD24 /* model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = model.c; sourceTree = "<group>"; };
+		1FAD00262B82A20A0061BD24 /* cglm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = cglm; sourceTree = "<group>"; };
+		1FAD00272B82A20A0061BD24 /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		1FAD00282B82A20A0061BD24 /* quad.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = quad.frag; sourceTree = "<group>"; };
+		1FAD00292B82A20A0061BD24 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
+		1FAD002A2B82A20A0061BD24 /* quad.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = quad.vert; sourceTree = "<group>"; };
+		1FAD002B2B82A20A0061BD24 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
+		1FAD002C2B82A20A0061BD24 /* compileShaders.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = compileShaders.sh; sourceTree = "<group>"; };
+		1FAD002D2B82A20A0061BD24 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		1FAD00302B82A23F0061BD24 /* init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		1FAD00332B82A36E0061BD24 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = ../../../../../VulkanSDK/1.3.268.1/macOS/lib/libMoltenVK.dylib; sourceTree = "<group>"; };
+		1FAD00342B82A36E0061BD24 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../VulkanSDK/1.3.268.1/macOS/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		1FAD00352B82A36E0061BD24 /* libvulkan.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.1.dylib; path = ../../../../../VulkanSDK/1.3.268.1/macOS/lib/libvulkan.1.dylib; sourceTree = "<group>"; };
+		1FAD00552B82A46B0061BD24 /* shader.vert.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shader.vert.spv; sourceTree = "<group>"; };
+		1FAD00562B82A46B0061BD24 /* shader.frag.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shader.frag.spv; sourceTree = "<group>"; };
+		1FAD00572B82A46B0061BD24 /* quad.vert.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.vert.spv; sourceTree = "<group>"; };
+		1FAD00582B82A46B0061BD24 /* quad.frag.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = quad.frag.spv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FAD00122B82A1000061BD24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAD00362B82A36E0061BD24 /* libMoltenVK.dylib in Frameworks */,
+				1FAD00372B82A36E0061BD24 /* libSDL2-2.0.0.dylib in Frameworks */,
+				1FAD00382B82A36E0061BD24 /* libvulkan.1.3.268.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FAD000C2B82A1000061BD24 = {
+			isa = PBXGroup;
+			children = (
+				1FAD00172B82A1000061BD24 /* vulkan */,
+				1FAD00162B82A1000061BD24 /* Products */,
+				1FAD00322B82A36E0061BD24 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1FAD00162B82A1000061BD24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FAD00152B82A1000061BD24 /* vulkan */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FAD00172B82A1000061BD24 /* vulkan */ = {
+			isa = PBXGroup;
+			children = (
+				1FAD00582B82A46B0061BD24 /* quad.frag.spv */,
+				1FAD00572B82A46B0061BD24 /* quad.vert.spv */,
+				1FAD00562B82A46B0061BD24 /* shader.frag.spv */,
+				1FAD00552B82A46B0061BD24 /* shader.vert.spv */,
+				1FAD00262B82A20A0061BD24 /* cglm */,
+				1FAD00212B82A20A0061BD24 /* models */,
+				1FAD002B2B82A20A0061BD24 /* textures */,
+				1FAD00302B82A23F0061BD24 /* init.c */,
+				1FAD00182B82A1000061BD24 /* main.c */,
+				1FAD00252B82A20A0061BD24 /* model.c */,
+				1FAD00282B82A20A0061BD24 /* quad.frag */,
+				1FAD00242B82A20A0061BD24 /* shader.frag */,
+				1FAD001F2B82A2090061BD24 /* cgltf.h */,
+				1FAD00292B82A20A0061BD24 /* model.h */,
+				1FAD002D2B82A20A0061BD24 /* stb_image.h */,
+				1FAD00222B82A20A0061BD24 /* types.h */,
+				1FAD00202B82A20A0061BD24 /* vkc.h */,
+				1FAD002C2B82A20A0061BD24 /* compileShaders.sh */,
+				1FAD002A2B82A20A0061BD24 /* quad.vert */,
+				1FAD00272B82A20A0061BD24 /* shader.vert */,
+			);
+			path = vulkan;
+			sourceTree = "<group>";
+		};
+		1FAD00322B82A36E0061BD24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FAD00332B82A36E0061BD24 /* libMoltenVK.dylib */,
+				1FAD00342B82A36E0061BD24 /* libSDL2-2.0.0.dylib */,
+				1FAD00352B82A36E0061BD24 /* libvulkan.1.3.268.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FAD00142B82A1000061BD24 /* vulkan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FAD001C2B82A1000061BD24 /* Build configuration list for PBXNativeTarget "vulkan" */;
+			buildPhases = (
+				1FAD00112B82A1000061BD24 /* Sources */,
+				1FAD00122B82A1000061BD24 /* Frameworks */,
+				1FAD00132B82A1000061BD24 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vulkan;
+			productName = vulkan;
+			productReference = 1FAD00152B82A1000061BD24 /* vulkan */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FAD000D2B82A1000061BD24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					1FAD00142B82A1000061BD24 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 1FAD00102B82A1000061BD24 /* Build configuration list for PBXProject "vulkan" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FAD000C2B82A1000061BD24;
+			productRefGroup = 1FAD00162B82A1000061BD24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FAD00142B82A1000061BD24 /* vulkan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FAD00112B82A1000061BD24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAD00312B82A23F0061BD24 /* init.c in Sources */,
+				1FAD002F2B82A20A0061BD24 /* model.c in Sources */,
+				1FAD00192B82A1000061BD24 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1FAD001A2B82A1000061BD24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/fabian/VulkanSDK/1.3.268.1/macOS/include;
+				LIBRARY_SEARCH_PATHS = "/Users/fabian/VulkanSDK/1.3.268.1/macOS/lib/**";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1FAD001B2B82A1000061BD24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/fabian/VulkanSDK/1.3.268.1/macOS/include;
+				LIBRARY_SEARCH_PATHS = "/Users/fabian/VulkanSDK/1.3.268.1/macOS/lib/**";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1FAD001D2B82A1000061BD24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FAD001E2B82A1000061BD24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FAD00102B82A1000061BD24 /* Build configuration list for PBXProject "vulkan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FAD001A2B82A1000061BD24 /* Debug */,
+				1FAD001B2B82A1000061BD24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FAD001C2B82A1000061BD24 /* Build configuration list for PBXNativeTarget "vulkan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FAD001D2B82A1000061BD24 /* Debug */,
+				1FAD001E2B82A1000061BD24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FAD000D2B82A1000061BD24 /* Project object */;
+}
