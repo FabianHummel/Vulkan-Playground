@@ -16,7 +16,7 @@ bool running = true;
 
 uint32_t currentFrame;
 
-void input()
+void input(void)
 {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -51,7 +51,7 @@ void update(double dt)
 //const uint32_t indicesCount = sizeof(indices) / sizeof(indices[0]);
 
 Uint64 startTime;
-void updateUniformBuffers() {
+void updateUniformBuffers(void) {
 
     Uint64 currentTime = SDL_GetTicks64() - startTime;
     float time = currentTime / 1000.0f;
@@ -261,9 +261,9 @@ void render()
     currentFrame = (currentFrame + 1) % vkc.swapChainImageCount;
 }
 
-extern void initVulkanDevice();
+extern void initVulkanDevice(void);
 extern void initVulkan(const char *texturePath);
-extern void cleanupVulkan();
+extern void cleanupVulkan(void);
 extern void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer* buffer, VkDeviceMemory* bufferMemory);
 
 int main(int argc, char *argv[])

@@ -30,7 +30,7 @@ FileData readFile(const char* path)
     return fd;
 }
 
-void createInstance()
+void createInstance(void)
 {
     VkApplicationInfo appInfo = { 0 };
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -66,7 +66,7 @@ void createInstance()
     free(ppExtensionNames);
 }
 
-void findPhysicalDevice()
+void findPhysicalDevice(void)
 {
     vkc.physicalDevice = VK_NULL_HANDLE; // default value
     uint32_t deviceCount = 0;
@@ -91,7 +91,7 @@ void findPhysicalDevice()
     free(devices);
 }
 
-void createWindowSurface()
+void createWindowSurface(void)
 {
     SDL_bool result = SDL_Vulkan_CreateSurface(window, vkc.instance, &vkc.surface);
     if (result == false) {
@@ -100,7 +100,7 @@ void createWindowSurface()
     }
 }
 
-void queryQueueFamilies()
+void queryQueueFamilies(void)
 {
     vkc.graphicsQueueFamilyIndex = UINT32_MAX;
     vkc.presentQueueFamilyIndex = UINT32_MAX;
@@ -132,7 +132,7 @@ void queryQueueFamilies()
     free(queueFamilies);
 }
 
-void createLogicalDevice()
+void createLogicalDevice(void)
 {
     VkDeviceQueueCreateInfo queueCreateInfo = { 0 };
     float queuePriority = 1.0f;
@@ -160,13 +160,13 @@ void createLogicalDevice()
     }
 }
 
-void getQueues()
+void getQueues(void)
 {
     vkGetDeviceQueue(vkc.device, vkc.graphicsQueueFamilyIndex, 0, &vkc.graphicsQueue);
     vkGetDeviceQueue(vkc.device, vkc.presentQueueFamilyIndex, 0, &vkc.presentQueue);
 }
 
-void getSurfaceFormats()
+void getSurfaceFormats(void)
 {
     uint32_t formatCount;
     vkGetPhysicalDeviceSurfaceFormatsKHR(vkc.physicalDevice, vkc.surface, &formatCount, NULL);
@@ -244,7 +244,7 @@ void getSurfaceFormats()
     SDL_Log("Swap extent: %dx%d", vkc.swapChainExtent.width, vkc.swapChainExtent.height);
 }
 
-void createSwapchain()
+void createSwapchain(void)
 {
     uint32_t imageCount = vkc.surfaceCapabilities.minImageCount + 1;
     if (imageCount > vkc.surfaceCapabilities.maxImageCount && vkc.surfaceCapabilities.maxImageCount > 0) {
@@ -294,7 +294,7 @@ VkImageView createImageView(VkImage image, VkFormat format, VkImageAspectFlags a
     return imageView;
 }
 
-void createSwapchainImageViews()
+void createSwapchainImageViews(void)
 {
     vkGetSwapchainImagesKHR(vkc.device, vkc.swapChain, &vkc.swapChainImageCount, NULL);
     vkc.swapChainImages = calloc(vkc.swapChainImageCount, sizeof(VkImage));
@@ -309,7 +309,7 @@ void createSwapchainImageViews()
     }
 }
 
-void createCommandPool()
+void createCommandPool(void)
 {
     VkCommandPoolCreateInfo poolInfo = { 0 };
     poolInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
@@ -401,7 +401,7 @@ void createImage(uint32_t width, uint32_t height, VkFormat format, VkImageTiling
     vkBindImageMemory(vkc.device, *image, *imageMemory, 0);
 }
 
-VkCommandBuffer beginSingleTimeCommands()
+VkCommandBuffer beginSingleTimeCommands(void)
 {
     VkCommandBufferAllocateInfo allocInfo = { 0 };
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -544,14 +544,14 @@ VkFormat findSupportedFormat(const VkFormat* candidates, size_t candidatesCount,
     return (VkFormat) 0;
 }
 
-VkFormat findDepthFormat()
+VkFormat findDepthFormat(void)
 {
     VkFormat candidates[] = { VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT };
     size_t candidatesCount = sizeof(candidates) / sizeof(candidates[0]);
     return findSupportedFormat(candidates, candidatesCount, VK_IMAGE_TILING_OPTIMAL, VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
 }
 
-void createDepthResources()
+void createDepthResources(void)
 {
     VkFormat depthFormat = findDepthFormat();
     createImage(vkc.swapChainExtent.width, vkc.swapChainExtent.height, depthFormat, VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, &vkc.depthImage, &vkc.depthImageMemory);
@@ -589,20 +589,20 @@ void createModelTextureImage(const char *imagePath)
     vkFreeMemory(vkc.device, stagingBufferMemory, NULL);
 }
 
-void createOffscreenTextureImage()
+void createOffscreenTextureImage(void)
 {
     createImage(vkc.swapChainExtent.width, vkc.swapChainExtent.height, vkc.surfaceFormat.format, VK_IMAGE_TILING_OPTIMAL,
         VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,
         &vkc.offscreenTexture.image, &vkc.offscreenTexture.deviceMemory);
 }
 
-void createTextureImageViews()
+void createTextureImageViews(void)
 {
     vkc.modelTexture.imageView = createImageView(vkc.modelTexture.image, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_ASPECT_COLOR_BIT);
     vkc.offscreenTexture.imageView = createImageView(vkc.offscreenTexture.image, vkc.surfaceFormat.format, VK_IMAGE_ASPECT_COLOR_BIT);
 }
 
-void createTextureSamplers()
+void createTextureSamplers(void)
 {
     VkSamplerCreateInfo samplerInfo = { 0 };
     samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
@@ -646,7 +646,7 @@ void copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size)
     endSingleTimeCommands(commandBuffer);
 }
 
-void createUniformBuffers()
+void createUniformBuffers(void)
 {
     VkDeviceSize bufferSize = sizeof(UniformBufferObject);
     createBuffer(bufferSize, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, &vkc.uniformBuffers.vsShared.buffer, &vkc.uniformBuffers.vsShared.deviceMemory);
@@ -657,7 +657,7 @@ void createUniformBuffers()
     vkMapMemory(vkc.device, vkc.uniformBuffers.vsQuad.deviceMemory, 0, bufferSize, 0, &vkc.uniformBuffers.vsQuad.mappedMemory);
 }
 
-void allocateCommandBuffers()
+void allocateCommandBuffers(void)
 {
     VkCommandBufferAllocateInfo allocInfo = { 0 };
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -674,7 +674,7 @@ void allocateCommandBuffers()
     }
 }
 
-void createSyncObjects()
+void createSyncObjects(void)
 {
     VkSemaphoreCreateInfo semaphoreInfo = { 0 };
     semaphoreInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
@@ -698,7 +698,7 @@ void createSyncObjects()
     }
 }
 
-void createDescriptorSetLayouts()
+void createDescriptorSetLayouts(void)
 {
     VkDescriptorSetLayoutBinding uboLayoutBinding = { 0 };
     uboLayoutBinding.binding = 0;
@@ -727,7 +727,7 @@ void createDescriptorSetLayouts()
 }
 
 
-void createDescriptorPool()
+void createDescriptorPool(void)
 {
     VkDescriptorPoolSize poolSize = { 0 };
     poolSize.type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
@@ -754,7 +754,7 @@ void createDescriptorPool()
     free(poolSizes);
 }
 
-void createDescriptorSets()
+void createDescriptorSets(void)
 {
     VkDescriptorSetAllocateInfo allocInfo = {0};
     allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
@@ -855,7 +855,7 @@ VkShaderModule createShaderModule(FileData fd)
     return shaderModule;
 }
 
-void createPipelineCache()
+void createPipelineCache(void)
 {
     VkPipelineCacheCreateInfo pipelineCacheCreateInfo = { 0 };
     pipelineCacheCreateInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO;
@@ -865,7 +865,7 @@ void createPipelineCache()
     }
 }
 
-void createGraphicsPipelines()
+void createGraphicsPipelines(void)
 {
     FileData vertShaderCodeShaded = readFile("shader.vert.spv");
     FileData fragShaderCodeShaded = readFile("shader.frag.spv");
@@ -1080,7 +1080,7 @@ void createGraphicsPipelines()
     free(fragShaderCodeQuad.data);
 }
 
-void createRenderPass()
+void createRenderPass(void)
 {
     VkAttachmentDescription colorAttachment = { 0 };
     colorAttachment.format = vkc.surfaceFormat.format;
@@ -1173,7 +1173,7 @@ void createRenderPass()
     }
 }
 
-void createFramebuffers() {
+void createFramebuffers(void) {
     // one framebuffer for every swap chain image
     vkc.swapChainFramebuffers = calloc(vkc.swapChainImageCount, sizeof(VkFramebuffer));
     for (size_t i = 0; i < vkc.swapChainImageCount; i++) {
@@ -1220,7 +1220,7 @@ void createFramebuffers() {
     }
 }
 
-void initVulkanDevice()
+void initVulkanDevice(void)
 {
     createInstance();
     findPhysicalDevice();
@@ -1253,7 +1253,7 @@ void initVulkan(const char *texturePath)
     createDescriptorSets();
 }
 
-void cleanupVulkan()
+void cleanupVulkan(void)
 {
     vkDestroyImageView(vkc.device, vkc.depthImageView, NULL);
     vkDestroyImage(vkc.device, vkc.depthImage, NULL);
