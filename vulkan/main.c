@@ -6,10 +6,12 @@
 #include <SDL2/SDL_vulkan.h>
 #include <math.h>
 #include "model.h"
+#include "player.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 VKC vkc;
+Player player;
 Model model;
 SDL_Window* window;
 bool running = true;
@@ -23,35 +25,55 @@ void input(void)
         if (event.type == SDL_QUIT) {
             running = false;
         }
+        
+        if (event.type == SDL_MOUSEMOTION) {
+            player.yaw += event.motion.xrel / 5.0;
+            player.pitch += event.motion.yrel / 5.0;
+            player.pitch = SDL_clamp(player.pitch, -80.0, 80.0);
+        }
     }
 }
 
 void update(double dt)
 {
-    //SDL_Log("dt: %.2f\n", dt* 1000);
+    SDL_PumpEvents();
+    int numKeys;
+    const Uint8 *keystate = SDL_GetKeyboardState(&numKeys);
+    double dx = 0.0, dz = 0.0;
+    for (int i = 0; i < numKeys; i++) {
+        if (keystate[SDL_SCANCODE_A] ) {
+            dx -= 1.0;
+        }
+        if (keystate[SDL_SCANCODE_D] ) {
+            dx += 1.0;
+        }
+        if (keystate[SDL_SCANCODE_W] ) {
+            dz -= 1.0;
+        }
+        if (keystate[SDL_SCANCODE_S] ) {
+            dz += 1.0;
+        }
+    }
+    
+    double l = SDL_sqrt(dx*dx + dz*dz);
+    if (dx != 0.0) {
+        dx /= l;
+    }
+    if (dz != 0.0) {
+        dz /= l;
+    }
+    
+    vec3 up = { 0.0f, 1.0f, 0.0f };
+    vec3 delta_pos = { -dx, 0, -dz };
+    glm_vec3_rotate(delta_pos, -glm_rad(player.yaw), up);
+    
+    player.pos[0] += delta_pos[0] * dt * 300.0;
+    player.pos[2] += delta_pos[2] * dt * 300.0;
 }
 
-
-//const Vertex vertices[] = {
-//    {{-0.5f, -0.5f, 0.0f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-//    {{0.5f, -0.5f, 0.0f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-//    {{0.5f, 0.5f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-//    {{-0.5f, 0.5f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}},
-//
-//    {{-0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-//    {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-//    {{0.5f, 0.5f, -0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-//    {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}},
-//};
-//
-//const uint32_t indices[] = {
-//    0, 1, 2, 2, 3, 0,
-//    4, 5, 6, 6, 7, 4,
-//};
-//const uint32_t indicesCount = sizeof(indices) / sizeof(indices[0]);
-
 Uint64 startTime;
-void updateUniformBuffers(void) {
+void updateUniformBuffers(void)
+{
 
     Uint64 currentTime = SDL_GetTicks64() - startTime;
     float time = currentTime / 1000.0f;
@@ -59,16 +81,26 @@ void updateUniformBuffers(void) {
 
     // parameters for transform, lighting (offscreen render pass)
     UniformBufferObject ubo = { 0 };
-    vec3 rotAxis = { 0.0f, 1.0f, 0.0f };
     glm_mat4_identity(ubo.model);
-    glm_rotate(ubo.model, time * glm_rad(90.0f), rotAxis);
-    vec3 eye = { 0.0f, 2.0f, 3.0f };
-    vec3 center = { 0.0f, 1.0f, 0.0f };
+    glm_mat4_identity(ubo.view);
+    
     vec3 up = { 0.0f, 1.0f, 0.0f };
-    glm_lookat(eye, center, up, ubo.view);
-    glm_perspective(glm_rad(45.0f), vkc.swapChainExtent.width / (float)vkc.swapChainExtent.height, 0.1f, 1000.0f, ubo.proj);
+    glm_rotate(ubo.view, glm_rad(player.yaw), up);
+    
+    mat4 inverted;
+    glm_mat4_inv(ubo.view, inverted);
+    vec3 forward;
+    glm_vec3(inverted[0], forward);
+    glm_vec3_normalize(forward);
+    
+    glm_rotate(ubo.view, glm_rad(player.pitch), forward);
+    
+    glm_translate(ubo.view, player.pos);
+    
+    glm_perspective(glm_rad(45.0f), vkc.swapChainExtent.width / (float)vkc.swapChainExtent.height, 0.1f, 10000.0f, ubo.proj);
     ubo.proj[1][1] *= -1; // because Vulkan Y-axis is top-bottom, vs OpenGL Y-axis which is bottom-top
-    glm_vec4(eye, 1.0f, ubo.lightPos);
+    vec3 light = { 0.0f, 100.0f, 0.0f};
+    glm_vec4(light, 1.0f, ubo.lightPos);
     memcpy(vkc.uniformBuffers.vsShared.mappedMemory, &ubo, sizeof(ubo));
 
     // parameters for postprocessing render pass
@@ -114,14 +146,10 @@ void recordOffscreenRenderPass(Model* model, VkCommandBuffer commandBuffer)
     scissor.offset.y = 0;
     scissor.extent = vkc.swapChainExtent;
     vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
-
-    VkBuffer vertexBuffers[] = { model->vertexBuffer };
-    VkDeviceSize offsets[] = { 0 };
-    vkCmdBindVertexBuffers(commandBuffer, 0, 1, vertexBuffers, offsets);
-    vkCmdBindIndexBuffer(commandBuffer, model->indexBuffer, 0, VK_INDEX_TYPE_UINT32);
+    
+    
     updateUniformBuffers();
-    vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, vkc.pipelineLayouts.shadedOffscreen, 0, 1, &vkc.descriptorSets.shadedOffscreen, 0, NULL);
-    vkCmdDrawIndexed(commandBuffer, model->indicesSize / sizeof(model->indices[0]), 1, 0, 0, 0);
+    renderModel(model, commandBuffer);
 
     vkCmdEndRenderPass(commandBuffer);
 }
@@ -189,7 +217,7 @@ void recordCommandBuffer(Model *model, VkCommandBuffer commandBuffer, uint32_t i
     }
 }
 
-void render()
+void render(void)
 {
     uint32_t frameIndex;
     VkResult result;
@@ -244,7 +272,7 @@ void render()
     }
     presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
     presentInfo.waitSemaphoreCount = 1;
-    presentInfo.pWaitSemaphores = &vkc.renderFinishedSemaphores[currentFrame],
+    presentInfo.pWaitSemaphores = &vkc.renderFinishedSemaphores[currentFrame];
     presentInfo.swapchainCount = 1;
     presentInfo.pSwapchains = &vkc.swapChain;
     presentInfo.pImageIndices = &frameIndex;
@@ -262,7 +290,7 @@ void render()
 }
 
 extern void initVulkanDevice(void);
-extern void initVulkan(const char *texturePath);
+extern void initVulkan(void);
 extern void cleanupVulkan(void);
 extern void createBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer* buffer, VkDeviceMemory* bufferMemory);
 
@@ -270,10 +298,15 @@ int main(int argc, char *argv[])
 {
     SDL_Init(SDL_INIT_EVERYTHING);
     window = SDL_CreateWindow("duck", 100, 100, 800, 600, SDL_WINDOW_VULKAN);
+    SDL_SetRelativeMouseMode(SDL_TRUE);
 
     initVulkanDevice();
-    loadModel(&model, "/Users/fabian/Documents/Schule/4AHIF/FRSEC/vulkan/vulkan/models", "Duck.gltf");
-    initVulkan(model.textureImagePath);
+    loadModel(&model, "/Users/fabian/Documents/Schule/4AHIF/FRSEC/vulkan/vulkan/models/sponza", "Sponza.gltf");
+    initVulkan();
+    
+    player.pos[0] = 0.0;
+    player.pos[1] = -100.0;
+    player.pos[2] = 0.0;
 
     startTime = SDL_GetTicks64();
     Uint64 ticks_prev = SDL_GetTicks64();

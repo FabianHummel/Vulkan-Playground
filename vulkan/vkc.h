@@ -7,8 +7,7 @@ typedef struct {
     VkImage image;
     VkDeviceMemory deviceMemory;
     VkImageView imageView;
-    VkSampler sampler;
-} TextureSampler;
+} Image;
 
 typedef struct {
     VkBuffer buffer;
@@ -45,7 +44,6 @@ typedef struct {
     } descriptorSetLayouts;
     VkDescriptorPool descriptorPool;
     struct {
-        VkDescriptorSet shadedOffscreen;
         VkDescriptorSet quad;
     } descriptorSets;
     VkPipelineCache pipelineCache;
@@ -64,8 +62,8 @@ typedef struct {
         MappedBuffer vsQuad;
     } uniformBuffers;
 
-    TextureSampler modelTexture;
-    TextureSampler offscreenTexture;
+    Image offscreenTexture;
+    VkSampler textureSampler;
 
     VkImage depthImage;
     VkDeviceMemory depthImageMemory;

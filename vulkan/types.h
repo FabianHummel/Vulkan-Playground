@@ -10,6 +10,7 @@ typedef struct
     vec3 color;
     vec3 normal;
     vec2 texCoord;
+    vec4 tangent;
 } Vertex;
 
 typedef struct {

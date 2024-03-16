@@ -1,0 +1,874 @@
+{
+    "uri": "sponza/Sponza.gltf",
+    "mimeType": "model/gltf+json",
+    "validatorVersion": "2.0.0-dev.3.8",
+    "issues": {
+        "numErrors": 0,
+        "numWarnings": 0,
+        "numInfos": 0,
+        "numHints": 0,
+        "messages": [],
+        "truncated": false
+    },
+    "info": {
+        "version": "2.0",
+        "generator": "glTF-Transform v1.2.3",
+        "resources": [
+            {
+                "pointer": "/buffers/0",
+                "mimeType": "application/gltf-buffer",
+                "storage": "external",
+                "uri": "Sponza.bin",
+                "byteLength": 9528220
+            },
+            {
+                "pointer": "/images/0",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8773302468495022225.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/1",
+                "mimeType": "image/png",
+                "storage": "external",
+                "uri": "5061699253647017043.png",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgba",
+                    "primaries": "srgb",
+                    "transfer": "srgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/2",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "11872827283454512094.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/3",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "12501374198249454378.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/4",
+                "mimeType": "image/png",
+                "storage": "external",
+                "uri": "8006627369776289000.png",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgba",
+                    "primaries": "srgb",
+                    "transfer": "srgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/5",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "715093869573992647.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/6",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4477655471536070370.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/7",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "7268504077753552595.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/8",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8503262930880235456.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/9",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "13982482287905699490.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/10",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8750083169368950601.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/11",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "16885566240357350108.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/12",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "16299174074766089871.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/13",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "5792855332885324923.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/14",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "11968150294050148237.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/15",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2051777328469649772.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/16",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "14650633544276105767.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/17",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4871783166746854860.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/18",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "10388182081421875623.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/19",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "15295713303328085182.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/20",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "9916269861720640319.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/21",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "15722799267630235092.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/22",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "6047387724914829168.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/23",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8051790464816141987.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/24",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "14267839433702832875.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/25",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "5823059166183034438.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/26",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "13824894030729245199.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/27",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "6667038893015345571.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/28",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "7441062115984513793.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/29",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8114461559286000061.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/30",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "3628158980083700836.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/31",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "11490520546946913238.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/32",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "3455394979645218238.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/33",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "7645212358685992005.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/34",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "6151467286084645207.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/35",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8783994986360286082.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/36",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2299742237651021498.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/37",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4975155472559461469.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/38",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "3371964815757888145.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/39",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "7056944414013900257.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/40",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4675343432951571524.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/41",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "7815564343179553343.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/42",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2374361008830720677.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/43",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2775690330959970771.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/44",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "332936164838540657.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/45",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2185409758123873465.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/46",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "6593109234861095314.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/47",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "17876391417123941155.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/48",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "466164707995436622.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/49",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4601176305987539675.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/50",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "11474523244911310074.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/51",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "4910669866631290573.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/52",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "9288698199695299068.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/53",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "14170708867020035030.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/54",
+                "mimeType": "image/png",
+                "storage": "external",
+                "uri": "16275776544635328252.png",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgba",
+                    "primaries": "srgb",
+                    "transfer": "srgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/55",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "1219024358953944284.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/56",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "3827035219084910048.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/57",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "755318871556304029.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/58",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2411100444841994089.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/59",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "10381718147657362067.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/60",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8481240838833932244.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/61",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "17556969131407844942.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/62",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "759203620573749278.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/63",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "6772804448157695701.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/64",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "13196865903111448057.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/65",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "14118779221266351425.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/66",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "2969916736137545357.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/67",
+                "mimeType": "image/jpeg",
+                "storage": "external",
+                "uri": "8747919177698443163.jpg",
+                "image": {
+                    "width": 1024,
+                    "height": 1024,
+                    "format": "rgb",
+                    "bits": 8
+                }
+            },
+            {
+                "pointer": "/images/68",
+                "mimeType": "image/png",
+                "storage": "external",
+                "uri": "white.png",
+                "image": {
+                    "width": 4,
+                    "height": 4,
+                    "format": "rgb",
+                    "primaries": "srgb",
+                    "transfer": "srgb",
+                    "bits": 8
+                }
+            }
+        ],
+        "animationCount": 0,
+        "materialCount": 25,
+        "hasMorphTargets": false,
+        "hasSkins": false,
+        "hasTextures": true,
+        "hasDefaultScene": true,
+        "drawCallCount": 103,
+        "totalVertexCount": 192496,
+        "totalTriangleCount": 262267,
+        "maxUVs": 1,
+        "maxInfluences": 0,
+        "maxAttributes": 4
+    }
+}

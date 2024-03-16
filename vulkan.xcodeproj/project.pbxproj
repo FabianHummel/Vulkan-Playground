@@ -46,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F62B14A2B931E4E00983E3D /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		1FAD00152B82A1000061BD24 /* vulkan */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vulkan; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAD00182B82A1000061BD24 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		1FAD001F2B82A2090061BD24 /* cgltf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cgltf.h; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 				1FAD00202B82A20A0061BD24 /* vkc.h */,
 				1FAD002A2B82A20A0061BD24 /* quad.vert */,
 				1FAD00272B82A20A0061BD24 /* shader.vert */,
+				1F62B14A2B931E4E00983E3D /* player.h */,
 			);
 			path = vulkan;
 			sourceTree = "<group>";
